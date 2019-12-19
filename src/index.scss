@@ -1,0 +1,59 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@font-face {
+  font-family: "EncodeSans Black";
+  src: url("./assets/fonts/EncodeSans-Black.ttf");
+}
+@font-face {
+  font-family: "EncodeSans Bold";
+  src: url("./assets/fonts/EncodeSans-Bold.ttf");
+}
+@font-face {
+  font-family: "EncodeSans ExtraBold";
+  src: url("./assets/fonts/EncodeSans-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "EncodeSans ExtraLight";
+  src: url("./assets/fonts/EncodeSans-ExtraLight.ttf");
+}
+@font-face {
+  font-family: "EncodeSans Light";
+  src: url("./assets/fonts/EncodeSans-Light.ttf");
+}
+@font-face {
+  font-family: "EncodeSans Medium";
+  src: url("./assets/fonts/EncodeSans-Medium.ttf");
+}
+@font-face {
+  font-family: "EncodeSans Regular";
+  src: url("./assets/fonts/EncodeSans-Regular.ttf");
+}
+@font-face {
+  font-family: "EncodeSans SemiBold";
+  src: url("./assets/fonts/EncodeSans-SemiBold.ttf");
+}
+@font-face {
+  font-family: "EncodeSans Thin";
+  src: url("./assets/fonts/EncodeSans-Thin.ttf");
+}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Input } from "reactstrap";
 import RatingBar from "../../components/ratingBar";
+import TextareaAutosize from "react-textarea-autosize";
+
 import "./feedback.scss";
 import RestClient from "../../config/restClient";
 
@@ -16,6 +17,7 @@ export default class FeedbackForm extends Component {
     this.setExperience = this.setExperience.bind(this);
   }
   componentDidMount() {
+    // FETCH ORDER LISTING API CALL
     // RestClient.get('/order').then(result=> console.log(result));
   }
 
@@ -29,6 +31,7 @@ export default class FeedbackForm extends Component {
 
   submit() {
     const { orderComment, experience } = this.state;
+    // UNCOMMENT TO CALL API HERE
     // let body = {
     //   orderID: 301,
     //   comment: orderComment,
@@ -61,15 +64,16 @@ export default class FeedbackForm extends Component {
     return (
       <div className="row">
         <div className="col-12">
-          <div className="d-flex flex-column justify-content-center align-items-center">
-            <div className="m-t-60 text-center">
-              <p className="question">01. How was the experience?</p>
-              <RatingBar setRating={this.setExperience} />
+          <div className="col-12">
+            <div className="d-flex flex-column justify-content-center align-items-center">
+              <div className="m-t-60 text-center">
+                <p className="question">01. How was the experience?</p>
+                <RatingBar setRating={this.setExperience} />
+              </div>
               <div className="comment-section">
-                <Input
-                  value={orderComment}
-                  onChange={e => this.handleFeedback(e.target.value)}
+                <TextareaAutosize
                   className="comment"
+                  maxRows={4}
                   placeholder="Tell us more about it..."
                 />
               </div>
@@ -85,9 +89,9 @@ export default class FeedbackForm extends Component {
             </div>
           </div>
         </div>
-        <div className="col-12 col-lg-6 col-md-6 mt-5 pt-5 mx-auto">
+        <div className="col-12 col-lg-6 col-md-6 mt-5 pt-5 mx-auto text-center">
           <button
-            className="site-btn-primary"
+            className="site-btn-primary ripple"
             disabled={!experience}
             onClick={() => this.submit()}
           >

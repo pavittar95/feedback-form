@@ -46,4 +46,4 @@ export const Emotes = [
   }
 ];
 
-export const defaultMessage = "Thanks for letting its know.";
+export const defaultMessage = "Thanks for letting us know.";

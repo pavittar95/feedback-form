@@ -10,10 +10,12 @@
 }
 
 .comment-section {
-  margin-top: 33px;
+  margin-top: 17px;
+  width: 300px;
   .comment {
-    width: 300px;
     height: 41px;
+    width: 100%;
+    padding: 10px;
     font-family: "EncodeSans Regular";
     font-size: 13px;
     letter-spacing: 0;
@@ -22,6 +24,7 @@
     background: #ffffff 0% 0% no-repeat padding-box;
     border: 1px solid #e8e8e8;
     border-radius: 9px;
+    resize: none;
     &::placeholder {
       color: #000000;
     }
@@ -29,21 +32,52 @@
 }
 
 .site-btn-primary {
-  background: #57bc00 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000029;
   border-radius: 10px;
   font-family: "EncodeSans Medium";
   font-size: 16px;
   letter-spacing: 0;
   color: #ffffff;
-  padding: 15px 105px;
-  width: 100%;
+  width: 323px;
+  height: 54px;
+
+  background: #57bc00 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+  border: 0;
   &:disabled,
   &[disabled] {
     background: #e0f3d0 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
+    box-shadow: none;
     border-radius: 10px;
     opacity: 0.8;
+  }
+  &.ripple {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+
+  &.ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 1s;
+  }
+
+  &.ripple:active:after {
+    transform: scale(0, 0);
+    opacity: 0.2;
+    transition: 0s;
   }
 }
 
